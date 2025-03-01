@@ -18,10 +18,16 @@ const sidebarNavItems: NavItem[] = [
         icon: null,
     },
     {
+        title: 'Passkeys',
+        url: '/settings/passkeys',
+        icon: null,
+    },
+    {
         title: 'Appearance',
         url: '/settings/appearance',
         icon: null,
     },
+
 ];
 
 export default function SettingsLayout({ children }: PropsWithChildren) {
