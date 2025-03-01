@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
@@ -20,7 +22,7 @@ class PasskeyFactory extends Factory
         return [
             'name' => fake()->word(),
             'credential_id' => Str::random(10),
-            'data' => []
+            'data' => [],
         ];
     }
 }

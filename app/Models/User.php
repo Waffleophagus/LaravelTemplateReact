@@ -34,8 +34,13 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'passkeys'
+        'passkeys',
     ];
+
+    public function passkeys(): HasMany
+    {
+        return $this->hasMany(Passkey::class);
+    }
 
     /**
      * Get the attributes that should be cast.
@@ -48,10 +53,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    public function passkeys() : HasMany
-    {
-        return $this->hasMany(Passkey::class);
     }
 }
