@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::put('settings/password', [PasswordController::class, 'update'])->name('password.update');
 
     Route::get('settings/passkeys', [PasskeyController::class, 'index'])->name('passkeys.edit');
-    Route::get('settings/passkeys', [PasskeyController::class, 'index'])->name('passkeys.delete');
+    Route::delete('settings/passkeys/{passkey}', [PasskeyController::class, 'destroy'])->name('passkeys.delete');
 
     Route::get('settings/appearance', function () {
         return Inertia::render('settings/appearance');

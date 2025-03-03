@@ -6,9 +6,12 @@ namespace App\Policies;
 
 use App\Models\Passkey;
 use App\Models\User;
+use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PasskeyPolicy
 {
+    use HandlesAuthorization;
+
     /**
      * Determine whether the user can view any models.
      */
@@ -46,7 +49,8 @@ class PasskeyPolicy
      */
     public function delete(User $user, Passkey $passkey): bool
     {
-        return false;
+
+        return $user->id === $passkey->user_id;
     }
 
     /**

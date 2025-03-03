@@ -41,7 +41,7 @@ export default function PasskeyManager({ passkeys = [] }: { passkeys: Passkey[] 
 
     const handleDelete = (id: number) => {
         if (confirm('Are you sure you want to remove this passkey?')) {
-            router.delete(route('passkey.delete', id));
+            router.delete(route('passkeys.delete', id));
         }
     };
 
@@ -107,7 +107,7 @@ export default function PasskeyManager({ passkeys = [] }: { passkeys: Passkey[] 
                                         <div>
                                             <p className="font-medium">{passkey.name}</p>
                                             <p className="text-sm text-neutral-500">
-                                                {passkey.created_at}
+                                               Created {passkey.created_at}
                                             </p>
                                         </div>
 
